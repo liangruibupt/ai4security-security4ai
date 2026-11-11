@@ -425,7 +425,7 @@ cw.Alarm(self, "NoSuccessfulCycle", alarm_description="security-radar: no succes
 - 清空需求包里 Lambda 添加的规则，因为 CFN 删不掉非空的 pack（`:19-24`）。
 - 按名称删除 Continuum 环境和集成；集成删除失败时只打印，因为环境删除可能还在传播（`:25-34`）。
 
-> 观察：`scripts/destroy-stage.sh:10` 写成 `uv run -q python -I -   # boto3 ... "$name" "$pack" "$space" <<'PY'`。在 bash 里 `#` 之后整行都是注释，所以参数和 here-doc 重定向都被注释掉了。结果是 Python 从终端读 stdin，而 `import sys, boto3` 等行会被当成 shell 命令执行。我在 `$KIROCREW_SCRATCH` 里用同样结构的最小脚本复现：here-doc 正文作为 shell 命令执行，`PY` 行报 `command not found`，退出码 127。在 `set -e` 下脚本会在执行到 `cdk destroy` 之前退出。修法是把注释移到行尾 `<<'PY'` 之后，或单独成行。
+> 观察：`scripts/destroy-stage.sh:10` 写成 `uv run -q python -I -   # boto3 ... "$name" "$pack" "$space" <<'PY'`。在 bash 里 `#` 之后整行都是注释，所以参数和 here-doc 重定向都被注释掉了。结果是 Python 从终端读 stdin，而 `import sys, boto3` 等行会被当成 shell 命令执行。我在 `$KIROCREW_SCRATCH` 里用同样结构的最小脚本复现：here-doc 正文作为 shell 命令执行，`PY` 行报 `command not found`，退出码 127。在 `set -e` 下脚本会在执行到 `cdk destroy` 之前退出。修法是把注释移到行尾 `<<'PY'` 之后，或单独成行。已报告上游：[aws-samples/sample-security-radar#13](https://github.com/aws-samples/sample-security-radar/issues/13)。
 
 ## 12. 其他仓库级护栏
 
