@@ -21,11 +21,11 @@ python3 scripts/check_source_links.py <sample-security-radar 本地 clone，检�
 
 ## 读源码时发现的问题
 
-以下问题在对应文档里有详细说明和代码位置，尚未向上游报告。
+以下问题在对应文档里有详细说明和代码位置。`destroy-stage.sh` 一条已报告上游，其余尚未报告。
 
 | 问题 | 影响 | 位置 |
 |---|---|---|
-| `destroy-stage.sh` 第 10 行的 `#` 注释把 `python -` 的参数和 `<<'PY'` heredoc 一起注释掉，heredoc 内容被当作 shell 执行 | 在 `set -e` 下脚本中途退出，走不到 `cdk destroy` | [01](01-architecture-and-guardrails.md) |
+| `destroy-stage.sh` 第 10 行的 `#` 注释把 `python -` 的参数和 `<<'PY'` heredoc 一起注释掉，heredoc 内容被当作 shell 执行 | 在 `set -e` 下脚本中途退出，走不到 `cdk destroy`；已报告上游 [aws-samples/sample-security-radar#13](https://github.com/aws-samples/sample-security-radar/issues/13) | [01](01-architecture-and-guardrails.md) |
 | cdk-nag 的 DDB3 抑制理由说不需要时间点恢复，但栈实际已开启 | 抑制多余，误导读者 | [01](01-architecture-and-guardrails.md) |
 | 任一条目（哪怕 T3 推文）链接的成功交易都能把 Web3 事件升到 V2 | 金额 ≥ 100 万美元时直接成为 P0 | [02](02-decisions-in-code.md) |
 | 数字校验是子串匹配 | 原文有 `2010` 时句中的 `10` 也能通过 | [02](02-decisions-in-code.md) |
