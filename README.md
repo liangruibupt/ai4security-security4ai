@@ -21,12 +21,12 @@ AI 时代安全实践笔记，两条主线：
 
 ## 功能 / 内容列表
 
-- Security Radar 源码深读三篇，全部源码行引用（约 490 处）可用脚本校验
-- PHP2Shell 案例推演（ai4security）
-- LiteLLM 漏洞链案例与 AI 网关加固清单（security4ai）
-- MCP / Agent 威胁模型（security4ai）
-- 可复用设计模式与上线前检查清单
-- 源码引用校验脚本
+- [Security Radar 源码深读](ai4security/01-security-radar/README.md)（ai4security）：[01 架构与工程护栏](ai4security/01-security-radar/01-architecture-and-guardrails.md)、[02 代码判定与大模型约束](ai4security/01-security-radar/02-decisions-in-code.md)、[03 定位、Continuum 与边缘缓解](ai4security/01-security-radar/03-respond-and-mitigate.md)；全部源码行引用（约 490 处）可用脚本校验
+- [PHP2Shell 案例推演](ai4security/02-php2shell-case/README.md)（ai4security）
+- [LiteLLM 漏洞链案例与 AI 网关加固清单](security4ai/01-litellm-case/README.md)（security4ai）
+- [MCP / Agent 威胁模型](security4ai/02-mcp-agent-threats/README.md)（security4ai）
+- [可复用设计模式](patterns/README.md)与[上线前检查清单](checklists/README.md)
+- 源码引用校验脚本：[check_source_links.py](scripts/check_source_links.py)、[sample_citations.py](scripts/sample_citations.py)
 
 ## 参考
 
