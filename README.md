@@ -11,16 +11,22 @@ AI 时代安全实践笔记，两条主线：
 
 | 路径 | 内容 | 状态 |
 |---|---|---|
-| `ai4security/01-security-radar/` | [aws-samples/sample-security-radar](https://github.com/aws-samples/sample-security-radar) 源码深读：架构、代码判定、定位与缓解 | 进行中 |
-| `ai4security/02-php2shell-case/` | PHP2Shell（CVE-2026-109618/109619）从情报到补丁的推演 | 计划中 |
-| `security4ai/01-litellm-case/` | LiteLLM 漏洞链分析与 AI 网关加固 | 计划中 |
-| `security4ai/02-mcp-agent-threats/` | MCP / Agent 工具调用威胁模型 | 计划中 |
-| `patterns/` | 可复用设计模式 | 计划中 |
-| `checklists/` | 上线前安全检查清单 | 计划中 |
+| `ai4security/01-security-radar/` | [aws-samples/sample-security-radar](https://github.com/aws-samples/sample-security-radar) 源码深读：[架构与工程护栏](ai4security/01-security-radar/01-architecture-and-guardrails.md)、[代码判定与大模型约束](ai4security/01-security-radar/02-decisions-in-code.md)、[定位、Continuum 与边缘缓解](ai4security/01-security-radar/03-respond-and-mitigate.md)，以及读源码时发现的问题 | ✅ |
+| `ai4security/02-php2shell-case/` | PHP2Shell（CVE-2026-109618/109619）从情报到定位、补丁、WAF 规则的推演，附自查命令 | ✅ |
+| `security4ai/01-litellm-case/` | LiteLLM 2026 漏洞时间线、攻击链、根因分类与 AI 网关加固清单 | ✅ |
+| `security4ai/02-mcp-agent-threats/` | MCP / Agent 信任边界与 12 类威胁，对照 OWASP LLM Top 10 2025 与 Agentic 威胁清单 | ✅ |
+| `patterns/` | 从深读中提炼的可复用设计模式 | ✅ |
+| `checklists/` | 上线前安全检查清单：AI 网关、Agent 与 MCP、漏洞响应准备 | ✅ |
+| `scripts/` | `check_source_links.py` 校验文档里的源码行链接；`sample_citations.py` 抽样对照引用与源码 | ✅ |
 
 ## 功能 / 内容列表
 
-- 仓库骨架与两条主线的目录规划
+- Security Radar 源码深读三篇，全部源码行引用（约 490 处）可用脚本校验
+- PHP2Shell 案例推演（ai4security）
+- LiteLLM 漏洞链案例与 AI 网关加固清单（security4ai）
+- MCP / Agent 威胁模型（security4ai）
+- 可复用设计模式与上线前检查清单
+- 源码引用校验脚本
 
 ## 参考
 
